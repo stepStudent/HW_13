@@ -1,0 +1,219 @@
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* Шапка */
+.app-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1px solid #e0e7ff;
+  letter-spacing: 0.3px;
+}
+
+.app-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.app-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 660px;
+  line-height: 1.6;
+}
+
+.app-subtitle code {
+  background: #e2e8f0;
+  color: #1e293b;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+/* Секції */
+.section-counter {
+  width: 100%;
+}
+
+.section-students {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 14px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.section-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-pill {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.pill-visible {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.pill-hidden {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.students-total-badge {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+}
+
+.students-total-badge strong {
+  color: #4f46e5;
+  font-weight: 800;
+}
+
+/* Сітка карток */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  animation: fadeInGrid 0.3s ease;
+}
+
+@keyframes fadeInGrid {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Стан приховано / порожньо */
+.students-state-card {
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 20px;
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: fadeInGrid 0.3s ease;
+}
+
+.students-hidden-card {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border-color: #cbd5e1;
+}
+
+.students-empty-card {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.state-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.state-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.state-description {
+  font-size: 0.98rem;
+  color: #64748b;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.state-description code {
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: #1e293b;
+}
+
+/* Футер */
+.app-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 24px;
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 24px 16px 40px;
+    gap: 24px;
+  }
+
+  .students-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

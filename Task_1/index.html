@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Цікавий факт дня 🧠✨</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background-decorations">
+    <span class="floating-emoji e1">🦉</span>
+    <span class="floating-emoji e2">💡</span>
+    <span class="floating-emoji e3">🦆</span>
+    <span class="floating-emoji e4">🍕</span>
+    <span class="floating-emoji e5">🚀</span>
+  </div>
+
+  <main class="container">
+    <header class="header">
+      <div class="badge">🎪 Генератор непотрібних, але геніальних знань</div>
+      <h1 class="title">Цікавий факт дня</h1>
+      <p class="subtitle">Знання, які навряд чи допоможуть здати екзамен, але зроблять вас королем розмов біля кавоварки 😎</p>
+    </header>
+
+    <div class="card" id="factCard">
+      <!-- Блок статусу завантаження -->
+      <div class="status-box loading-box hidden" id="loadingState">
+        <div class="spinner"></div>
+        <p class="loading-text">Завантаження...</p>
+        <span class="loading-subtext" id="funnyLoadingText">Дзвонимо у всесвітню бібліотеку дивацтв...</span>
+      </div>
+
+      <!-- Блок помилки -->
+      <div class="status-box error-box hidden" id="errorState">
+        <div class="error-icon">😿💥</div>
+        <h3 class="error-title">Ой лишенько! Щось пішло не так</h3>
+        <p class="error-message" id="errorMessage">Не вдалося завантажити факт. Можливо, інтернет вирішив відпочити або сервер втомився.</p>
+        <button class="retry-btn" id="retryBtn">Спробувати ще раз 🔄</button>
+      </div>
+
+      <!-- Блок з фактом -->
+      <div class="content-box" id="contentState">
+        <div class="fact-header">
+          <span class="fact-tag" id="factTag">🎯 Свіжий факт</span>
+          <div class="lang-controls">
+            <button class="lang-pill active" id="btnShowUa" title="Показати українською">🇺🇦 Укр</button>
+            <button class="lang-pill" id="btnShowEn" title="Показати англійською">🇬🇧 Eng</button>
+            <button class="lang-pill" id="btnShowBoth" title="Обидва варіанти">🌐 Обидва</button>
+          </div>
+        </div>
+
+        <div class="fact-views">
+          <!-- Український переклад -->
+          <div class="fact-view ua-view" id="uaView">
+            <div class="lang-label">
+              <span>🇺🇦 Переклад:</span>
+              <span class="auto-badge" id="translationStatus">автоматичний переклад</span>
+            </div>
+            <blockquote class="fact-text" id="factUa">
+              Натисніть кнопку нижче, щоб дізнатися щось неймовірне (або абсолютно безглузде)!
+            </blockquote>
+          </div>
+
+          <!-- Англійський оригінал -->
+          <div class="fact-view en-view hidden" id="enView">
+            <div class="lang-label">
+              <span>🇬🇧 Оригінал:</span>
+            </div>
+            <blockquote class="fact-text-en" id="factEn">
+              Click the button below to get your daily dose of random knowledge!
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="fact-footer">
+          <div class="fact-info">
+            <span class="source-label" id="factSource">Джерело: Всесвітні нетрі</span>
+          </div>
+          <div class="action-buttons">
+            <button class="icon-btn" id="copyBtn" title="Скопіювати факт" aria-label="Скопіювати факт">
+              📋 <span class="copy-text">Скопіювати</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Головна кнопка дії -->
+    <div class="cta-wrapper">
+      <button class="primary-btn" id="getFactBtn">
+        <span class="btn-icon">🎲</span>
+        <span class="btn-text">Отримати факт</span>
+      </button>
+      <p class="cta-hint">Обережно: надмірне вживання випадкових фактів викликає посмішку!</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Створено для практичного завдання • Дані з <a href="https://uselessfacts.jsph.pl" target="_blank" rel="noopener noreferrer">Useless Facts API</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
